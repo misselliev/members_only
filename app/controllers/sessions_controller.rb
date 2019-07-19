@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action :current_user, only: [:log_in, :log_out]
   def new
   end
 
@@ -14,7 +15,16 @@ class SessionsController < ApplicationController
     end
   end
 
+  def home
+  end
+  
   def destroy
+    if logged_in?
+      log_out
+      redirect_to root_path
+    else
+      redirect_to users_path
+    end
   end
 
 end
