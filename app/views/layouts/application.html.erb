@@ -10,7 +10,10 @@
   </head>
 
   <body>
-
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+      <%= @current_user.nil? ? "No existe" :  @current_user.name %>
     <%= yield %>
     <%=link_to "Home", root_path%>
   </body>

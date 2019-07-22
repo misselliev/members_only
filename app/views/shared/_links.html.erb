@@ -1,5 +1,6 @@
 <% if logged_in?%>  
-  <%= link_to 'Sign out', logout_path%>
+  <%= link_to 'Index', index_path%>
+  <%= link_to 'Sign out', logout_path, method: :delete%>
 <%else%>
   <%= link_to 'Sign in', signin_path%>
 <%end%>
