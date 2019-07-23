@@ -1,5 +1,4 @@
-<h1>Sessions#new</h1>
-<p>LOGIN</p>
+<% provide(:title, 'Login') %>
 
 <%= form_for(:session, url: signin_path) do |f| %>
   <%= f.label :email %>
