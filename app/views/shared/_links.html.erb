@@ -1,6 +1,8 @@
-<% if logged_in?%>  
-  <%= link_to 'Index', users_path%>
-  <%= link_to 'Sign out', logout_path, method: :delete%>
-<%else%>
-  <%= link_to 'Sign in', signin_path%>
-<%end%>
+<%=link_to "Home", root_path%>  ||  
+<%= link_to 'Posts', posts_path%>  ||  
+  <% if logged_in?%>  
+    <%= link_to 'Users', users_path%>  ||  
+    <%= link_to 'Sign out', logout_path, method: :delete%> 
+  <%else%>
+    <%= link_to 'Sign in', signin_path%> 
+  <%end%>

@@ -1,9 +1,13 @@
-<h1>Posts</h1>
+
+<% provide(:title, 'Posts') %>
 
 <% @posts.each do |item| %>
-  <div>
-    <h3><%= item.title %></h3>
-    <p><%= item.body %></p>
-
+  <div class="card mb-3 ml-4 mr-4">
+    <p class=" card-header"><%= item.title %></p>
+    <p class="card-body"><%= item.body %></p>
+    <%if logged_in?%>
+      <p><%= item.user.name %></p>
+    <%end%>
   </div>
 <% end %>
+
