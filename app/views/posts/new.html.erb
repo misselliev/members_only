@@ -1,0 +1,11 @@
+<h1>New Post</h1>
+<!--<h2><%#= @current_user.name %></h2>-->
+<%= form_for(:post, url: postcreate_path) do |p| %>
+  <ul>
+    <%= p.label :title %>
+    <%= p.text_field :title %>
+    <%= p.label :body %>
+    <%= p.text_area :body %>
+    <%= p.submit 'Send' %>
+  </ul>
+<% end %>

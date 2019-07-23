@@ -2,6 +2,7 @@ class User < ApplicationRecord
   attr_accessor :remember_token
   before_create :assign_token
   has_secure_password
+  has_many :posts
 
   def new_token
     SecureRandom.urlsafe_base64

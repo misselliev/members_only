@@ -1,14 +1,15 @@
 class SessionsController < ApplicationController
   before_action :current_user
+
   def new
   end
 
   def create
     @user = User.find_by(email: params[:session][:email].downcase)
     if @user && @user.authenticate(params[:session][:password])
-      flash[:success] = "EXITO"
+      flash[:success] = "Welcome!"
       log_in @user
-      redirect_to users_path
+      redirect_to new_post_path
     else
       flash[:danger] = "Check your credentials!"
       redirect_to signin_path
