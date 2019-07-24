@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   before_action :logged_in?, only: %i[new create]
   # before_action :current_user, only: %i[new create]
