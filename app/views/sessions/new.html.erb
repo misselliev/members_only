@@ -1,11 +1,11 @@
 <% provide(:title, 'Login') %>
 
 <%= form_for(:session, url: signin_path) do |f| %>
-  <%= f.label :email %>
+  <%= f.label :email %>:
   <%= f.email_field :email %>
   <br>
-  <%= f.label :password %>
+  <%= f.label :password %>:
   <%= f.password_field :password %>
 
-  <%= f.submit 'Enviar' %>
+  <%= f.submit 'Login' %>
 <% end %>

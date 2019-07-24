@@ -1,11 +1,16 @@
-<h1>New Post</h1>
-<!--<h2><%#= @current_user.name %></h2>-->
+<% provide(:title, 'New Post') %>
+
 <%= form_for(:post, url: postcreate_path) do |p| %>
-  <ul>
-    <%= p.label :title %>
+  <ul class="card-body text-capitalize">
+    <%= p.label :title %>:
+    <br>
     <%= p.text_field :title %>
-    <%= p.label :body %>
+    <br>
+    <br>
+    <%= p.label :body %>:
+    <br>
     <%= p.text_area :body %>
+    <br>
     <%= p.submit 'Send' %>
   </ul>
 <% end %>
