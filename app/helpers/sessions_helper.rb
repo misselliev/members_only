@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 module SessionsHelper
-
   def log_in(user)
     session[:user_id] = user.id
+    current_user
   end
 
   def remember(user)
@@ -38,5 +38,4 @@ module SessionsHelper
     reset_session
     @current_user = nil
   end
-
 end
