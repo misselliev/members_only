@@ -1,14 +1,18 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :logged_in?, only: %i[new create]
+  before_action :not_logged_in?, only: [:index]
 
   def index
     @posts = Post.all
   end
 
   def new
-    @post = Post.new
+    if logged_in?
+      @post = Post.new
+    else
+      redirect_to signin_path
+    end
   end
 
   def create
