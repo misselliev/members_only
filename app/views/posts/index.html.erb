@@ -1,0 +1,11 @@
+<% provide(:title, 'Posts') %>
+
+<% @posts.each do |item| %>
+  <div class="card mb-3 ml-4 mr-4">
+    <p class=" card-header text-uppercase"><%= item.title %></p>
+    <p class="card-body text-capitalize"><%= item.body %></p>
+    <%if logged_in?%>
+      <p class="font-weight-bold ml-4">Author: <%= item.user.name %></p>
+    <%end%>
+  </div>
+<% end %>

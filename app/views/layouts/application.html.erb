@@ -10,6 +10,20 @@
   </head>
 
   <body>
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+
+      <div class="d-flex col-12 pl-2">
+        <div class="col-8 pl-0">Welcome <%=current_user.nil? ? "Guest" :  @current_user.name %> !</div>
+        <div class="d-flex col-4 justify-content-end"><%=render 'shared/links'%></div>
+      </div>
+
+      
+        <h3><title class="card mb-3 mt-4 pl-2"><%= full_title(yield(:title)) %></title>
+</h3>
+      
     <%= yield %>
+
   </body>
 </html>

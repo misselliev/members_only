@@ -1,0 +1,18 @@
+<% provide(:title, 'Register') %>
+<%= form_for(:user, url: users_create_path) do |f| %>
+<%= render 'shared/errors', object: f.object %>
+
+  <%= f.label :name %>:
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :email %>:
+  <%= f.email_field :email %>
+  <br>
+  <%= f.label :password %>:
+  <%= f.password_field :password %>
+  <br>
+  <%= f.label :password_confirmation %>:
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.submit 'Register' %>
+<% end %>
